@@ -13,11 +13,11 @@ function App() {
 
   const currrencyInfo =useCurrencyInfo(from)
   
-  const options=Objects.keys(currrencyInfo)
+  const options=Object.keys(currrencyInfo)
 
 const swap=()=>{
   setFrom(to)
-  setTo(From)
+  setTo(from)
   setConvertedAmount(amount)
   setAmount(convertedAmount)
 
@@ -31,7 +31,7 @@ const convert=()=>{
         <div
             className="w-full h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat"
             style={{
-                backgroundImage: `url('${BackgroundImage}')`,
+                backgroundImage: `url('https://plus.unsplash.com/premium_photo-1684164601738-cf486690c601?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
             }}
         >
             <div className="w-full">
@@ -40,19 +40,20 @@ const convert=()=>{
                     <form
                         onSubmit={(e) => {
                             e.preventDefault();
+                            convert()
                            
                         }}
                     >
-                        <div className="w-full mb-1">
-                            <InputBox
-                                label="From"
-                                amount={amount}
-                                currrencyOptions={options}
-                                onCurrencyChange={currency=>setAmount(amount)}
-                                selectCurrency={from}
-                                
-                            />
-                        </div>
+                      <div className="w-full mb-1">
+                        <InputBox
+                            label="From"
+                            amount={amount}
+                            currencyOptions={options}
+                            onCurrencyChange={currency => setAmount(amount)}
+                            selectCurrency={from}
+                            onAmountChange={(amount) => setAmount(amount)}
+                        />
+                    </div>
                         <div className="relative w-full h-0.5">
                           {/* swap */}
                             <button
