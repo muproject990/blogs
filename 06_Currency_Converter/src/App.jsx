@@ -24,7 +24,13 @@ function App () {
     setConvertedAmount(amount * currrencyInfo[to])
   }
   return (
-    <div
+    <div className='flex  '>
+      <div className='w-[50%] h-screen flex flex-wrap justify-center items-center bg-slate-600  hover:bg-pink-200 bg-cover bg-no-repeat"'>
+        <img className='h-40 rounded-md ' src="https://images.pexels.com/photos/11833310/pexels-photo-11833310.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
+      </div>
+      {/* Problems occured here but it is solved  */}
+      <div className='h-screen w-[50%]'>
+        <div
       className='w-full h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat'
       style={{
         backgroundImage: `url('https://plus.unsplash.com/premium_photo-1684164601738-cf486690c601?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`
@@ -79,6 +85,9 @@ function App () {
         </div>
       </div>
     </div>
+    </div>
+</div>
+
   )
 }
 
