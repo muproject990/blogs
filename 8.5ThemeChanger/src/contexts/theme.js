@@ -10,4 +10,5 @@ export const ThemeProvider = ThemeContext.Provider
 // Hook
 export default function useTheme () {
   return useContext(ThemeContext)
+  // !I previously used ThemeProvider inspite of ThemeContext
 }

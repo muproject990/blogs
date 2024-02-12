@@ -10,10 +10,10 @@ function App() {
   const [themeMode, setThemeMode] = useState('light')
 
   const lightTheme=() =>{
-    setThemeMode("Light")
+    setThemeMode("light")
   }
   const darkTheme=() => { 
-    setThemeMode("Dark")
+    setThemeMode("dark")
   }
 
   useEffect(() => {
