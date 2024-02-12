@@ -2,11 +2,13 @@ import React from "react";
 import UserContext from "./UserContext";
 
 const UserContextProvider = ({ children }) =>{
-    // const [user,setUser]=useState(null)
-    const [user,setUser]=React.useState('a')
+    
+    
+    const [user, setUser] = React.useState('')
+    //      var  methods
     return (
         <UserContext.Provider value={{user,setUser}}>
-            {children}
+            {children} //Header ,Navbar,Footer,Body,Tag etc
         </UserContext.Provider>
     )
 }
