@@ -9,7 +9,7 @@ export const TodoContext = createContext({
     }
   ], //Property
   addTodo: todo => {}, //Methods
-  updataTodo: (id, todo) => {},
+  updateTodo: (id, todo) => {},
   deleteTodo: id => {},
   toggleTodo: id => {}
 }) //Used for small projects for bigger projects we use redux
