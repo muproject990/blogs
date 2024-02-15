@@ -6,7 +6,7 @@ function App() {
 console.log();
   return (
     <>
-    
+    <h1 className='text-center grid items-center'>Chai aur code</h1>
     </>
   )
 }

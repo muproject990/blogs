@@ -19,7 +19,7 @@ export class AuthService {
 
       if (userAccount) {
         //call another methods like login
-        return this.login({ email, password 8})
+        return this.login({ email, password })
       } else {
         return userAccount
       }
