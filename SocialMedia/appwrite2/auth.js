@@ -1,10 +1,9 @@
-import conf from '../conf/conf.js'
+import conf from '../conf/conf'
 import { Client, Account, ID } from 'appwrite'
 
 export class AuthService {
   client = new Client()
-  account
-
+  account //
   constructor () {
     this.client.setEndpoint(conf.appwriteUrl).setProject(conf.appwriteProjectId)
     this.account = new Account(this.client)
@@ -15,11 +14,11 @@ export class AuthService {
       const userAccount = await this.account.create(
         ID.unique(),
         email,
-        password,
-        name
+        password
       )
+
       if (userAccount) {
-        // call another method
+        //call another methods like login
         return this.login({ email, password })
       } else {
         return userAccount
@@ -29,6 +28,8 @@ export class AuthService {
     }
   }
 
+  //TODO ***LOGIN  ***
+
   async login ({ email, password }) {
     try {
       return await this.account.createEmailSession(email, password)
@@ -36,24 +37,28 @@ export class AuthService {
       throw error
     }
   }
-
+  // TODO *** Check I am LOGIN or NOT ***
   async getCurrentUser () {
     try {
       return await this.account.get()
     } catch (error) {
-      console.log('Appwrite serive :: getCurrentUser :: error', error)
+      console.log('Appwrite serviece ::getCurrentUSer:error', error)
+      throw error
     }
 
     return null
   }
 
+  //TODO ***LOGOUT  ***
   async logout () {
     try {
-      await this.account.deleteSessions()
+      await this.account.deleteSessions() //deleteSession or deleteSessions
     } catch (error) {
-      console.log('Appwrite serive :: logout :: error', error)
+      throw error
     }
   }
+
+  //!END
 }
 
 const authService = new AuthService()
