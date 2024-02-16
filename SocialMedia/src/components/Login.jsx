@@ -34,11 +34,12 @@ function Login() {
     return (
         <div className='flex items-center justify-center w-full'>
 
-            <div className="mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10 ">
+            <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10 `}>
                 <div className="mb-2 flex justify-center ">
                     <span className='inline-block w-full max-w-[100%]' >
                         <Logo width='100%' />
                     </span>
+
 
                 </div>
                 <h2 className='text-center text-2xl font-bold leading-tight'>Sign in to your account</h2>
@@ -53,20 +54,40 @@ function Login() {
                     </Link>
                 </p>
                 {error && <p className='text-red-600 mt-8 text-center'>{error}</p>}
+
+                {/* //!Form */}
                 <form onSubmit={handleSubmit(login)} className='mt-8'>
                     <div className="space-y-5">
                         <Input
                             label="Email:"
                             placeholder="Enter your email"
                             type="email"
-                            {...register("email", {
-                                required: true,
-                                validate: {
-                                    matchPattern: (value) => /\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b/.test(value)
-                                }
-                            })}
+                            {...register("email",//!yeha key dine ho like email
+                                {//options
+                                    required: true,
+                                    validate: {
+                                        matchPattern: (value) => /\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b/.test(value) || "Email address must be valid address"
+
+                                    }
+                                })}
 
                         />
+                        <Input
+                            label="Password:"
+                            placeholder="Enter your password"
+                            type="email"
+                            {...register("email",
+                                {//options
+                                    required: true,
+
+                                })}
+
+                        />
+
+                        <Button
+                            type="submit"
+                            className="w-full"
+                        >Sign In</Button>
                     </div>
                 </form>
                 //handle submit is events
