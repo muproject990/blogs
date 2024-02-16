@@ -75,8 +75,8 @@ function Login() {
                         <Input
                             label="Password:"
                             placeholder="Enter your password"
-                            type="email"
-                            {...register("email",
+                            type="password"
+                            {...register("password",
                                 {//options
                                     required: true,
 
